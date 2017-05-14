@@ -1,11 +1,12 @@
+
+import { ProjectService } from './services/project.service';
+import { ProjectsComponent } from './components/projects/projects.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
 import { AboutComponent } from "./components/about/about.component";
 
 @NgModule({
@@ -13,21 +14,22 @@ import { AboutComponent } from "./components/about/about.component";
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
         AboutComponent,
-        HomeComponent
+        HomeComponent,
+        ProjectsComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'projects', component: ProjectsComponent },
             { path: 'about', component: AboutComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        ProjectService
     ]
 })
 export class AppModule {
