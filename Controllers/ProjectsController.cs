@@ -6,23 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace arrowdev.Controllers
-{
+{    
     public class ProjectsController : Controller
-    {
-        public class FeaturesController : Controller
     {
         private readonly ProjectDbContext context;
 
-        public FeaturesController(ProjectDbContext context)
+        public ProjectsController(ProjectDbContext context)
         {
             this.context = context;
         }
 
         [HttpGet("/api/projects")]
-        public async Task<IEnumerable<Project>> GetProjects()
+        public async Task<IActionResult> GetProjects()
         {
-            return await context.Projects.ToListAsync();
+            var projects = await context.Projects.ToListAsync();
+            return Ok (projects);
         }
-    }
-    }
+    }    
 }
