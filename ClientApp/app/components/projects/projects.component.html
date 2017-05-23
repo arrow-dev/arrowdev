@@ -1,5 +1,13 @@
 <h1>Projects</h1>
+<p>This project list is fetched from a database and rendered dynamically.</p>
 <div class="jumbotron">
-<p style="text-align: center">Under Contruction see <a href="https://github.com/arrow-dev">GitHub</a></p>
+    <ul>
+        <li *ngFor="let p of projects" style="list-style: none; border-bottom: 1px solid black">
+            <h2>{{p.title}}</h2>
+            <p>{{p.description}}</p>
+            <p>View on <a href="{{p.link}}">Github</a></p>            
+        </li>
+    </ul>
 </div>
+
 
