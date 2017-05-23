@@ -20,6 +20,9 @@ namespace arrowdev.Controllers
         public async Task<IActionResult> GetProjects()
         {
             var projects = await context.Projects.ToListAsync();
+            if(projects.Count < 1)
+                return NoContent();
+
             return Ok (projects);
         }
     }    
