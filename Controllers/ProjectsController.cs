@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using arrowdev.Models;
 using arrowdev.Persistance;
@@ -19,7 +20,7 @@ namespace arrowdev.Controllers
         [HttpGet("/api/projects")]
         public async Task<IActionResult> GetProjects()
         {
-            var projects = await context.Projects.ToListAsync();
+            var projects = await context.Projects.OrderBy(p => p.Title).ToListAsync();
             if(projects.Count < 1)
                 return NoContent();
 

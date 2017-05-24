@@ -2,10 +2,11 @@
 <p>This project list is fetched from a database and rendered dynamically.</p>
 <div class="jumbotron">
     <ul>
-        <li *ngFor="let p of projects" style="list-style: none; border-bottom: 1px solid black">
+        <li *ngFor="let p of projects" style="list-style: none; border-bottom: 1px solid black;">
             <h2>{{p.title}}</h2>
+            <img src="{{p.image}}" alt="Project Screenshot" class="project-image img-responsive" style="margin-bottom: 15px">
             <p>{{p.description}}</p>
-            <p>View on <a href="{{p.link}}">Github</a></p>            
+            <p>View on <a href="{{p.link}}">Github</a></p>                       
         </li>
     </ul>
 </div>
