@@ -1,11 +1,11 @@
 <h1>Projects</h1>
 <div class="jumbotron">
     <ul>
-        <li *ngFor="let p of projects" style="list-style: none; border-bottom: 1px solid black;">
+        <li *ngFor="let p of projects" class="project-li">
             <h2>{{p.title}}</h2>
-            <img src="{{p.image}}" alt="Project Screenshot" class="project-image img-responsive" style="margin-bottom: 15px">
+            <img src="{{p.image}}" alt="Project Screenshot" class="project-image img-responsive">
             <p>{{p.description}}</p>
-            <p>View on <a href="{{p.link}}">Github</a></p>                       
+            <p class="project-url">View on <a href="{{p.link}}">Github</a></p>                       
         </li>
     </ul>
 </div>

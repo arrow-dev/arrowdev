@@ -5,7 +5,8 @@ import { Http } from '@angular/http';
 
 @Component({
     selector: 'projects',
-    templateUrl: './projects.component.html'
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
     public projects: Project[];

@@ -1,0 +1,13 @@
+.project-li {
+    list-style: none; 
+    border-bottom: 1px solid black;
+}
+
+.project-image {
+    margin-bottom: 15px;
+}
+
+.project-url {
+    font-size: 1em;
+}
+    
