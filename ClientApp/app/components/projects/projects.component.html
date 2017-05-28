@@ -1,11 +1,15 @@
 <h1>Projects</h1>
-<div class="jumbotron">
-    <ul>
-        <li *ngFor="let p of projects" class="project-li">
-            <h2>{{p.title}}</h2>
-            <img src="{{p.image}}" alt="Project Screenshot" class="project-image img-responsive">
-            <p>{{p.description}}</p>
-            <p class="project-url">View on <a href="{{p.link}}">Github</a></p>                       
-        </li>
-    </ul>
-</div>
+<ul class="project-list">
+    <li *ngFor="let p of projects" class="project-li container">
+        <div class="row">
+            <div class="col-md-3 project-image-container">                    
+                <img src="{{p.image}}" alt="Project Screenshot" class="project-image center-block">
+            </div>
+            <div class="col-md-9">
+                <h2>{{p.title}}</h2>
+                <p class="project-description">{{p.description}}</p>
+                <p class="project-url">View on <a href="{{p.link}}">Github</a></p>
+            </div>
+        </div>                                   
+    </li>
+</ul>
