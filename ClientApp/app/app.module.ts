@@ -8,6 +8,7 @@ import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from "./components/about/about.component";
+import { AuthService } from "./services/auth.service";
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -29,6 +30,7 @@ import { AboutComponent } from "./components/about/about.component";
         ])
     ],
     providers: [
+        AuthService,
         ProjectService
     ]
 })

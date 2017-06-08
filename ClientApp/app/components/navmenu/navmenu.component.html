@@ -26,6 +26,14 @@
                 <span class='glyphicon glyphicon-info-sign'></span> About
             </a>
         </li>
+        <li [routerLinkActive]="['link-active']">
+            <a href="#" onClick="return false;" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
+                <span class='glyphicon glyphicon-user'></span> Login
+            </a>
+            <a href="#" onClick="return false;" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">
+                <span class='glyphicon glyphicon-user'></span> Logout
+            </a>
+        </li>
     </ul>
     </div>
   </div>
