@@ -55,6 +55,13 @@ namespace WebApplicationBasic
 
             app.UseStaticFiles();
 
+            var options = new JwtBearerOptions
+            {
+                Audience = "https://api.arrowdev.com",
+                Authority = "https://arrowdev.au.auth0.com/"
+            };
+            app.UseJwtBearerAuthentication(options);
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
